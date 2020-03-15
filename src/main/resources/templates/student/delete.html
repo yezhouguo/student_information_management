@@ -1,0 +1,76 @@
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <p th:utext="'<b>学生信息查询：</b>'">title</p>
+    <div class="container">
+            <p th:utext="'<b>待审核应用列表：</b>'">学生信息</p>
+            <table class="table table-dark">
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>生日</th>
+                    <th>籍贯</th>
+                    <th>院系</th>
+                </tr>
+              </thead>
+              </tbody>
+                <tr th:each="student : ${results}">
+                    <td th:text="${student.id}">studentId</td>
+                    <td th:text="${student.name}">studentName</td>
+                    <td th:text="${student.gender}">studentGender</td>
+                    <td th:text="${student.birthday}">studentBirthday</td>
+                    <td th:text="${student.native_place}">studentNative_place</td>
+                    <td th:text="${student.major}">studentMajor</td>
+                </tr>
+              </tbody>
+            </table>
+          <p th:text="'请输入想要删除的学生学号：'">说明</p>
+          <form name="deletestudent" action="/student/delete" class="text-info">
+              学生学号:<input type="text" name="id"><br/>
+              <input type="submit" value="删除">
+          </form>
+      
+    </div> <!-- /container -->
+   
+    
+    <p><a class="btn btn-primary btn-lg" th:href="@{/}" role="button">返回主页</a></p>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

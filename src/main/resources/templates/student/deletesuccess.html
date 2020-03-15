@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>删除成功</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<div class="col-md-8">  
+  <div class="panel panel-default">  
+
+<body>
+    <!-- 不存在则忽略，显示hello null!(可以通过默认值进行设置)-->
+    <p th:text="学生信息删除成功！">3333</p>
+    
+    
+    <p><a class="btn btn-primary btn-lg" th:href="@{/}" role="button">返回主页</a></p>
+    <p><a class="btn btn-primary btn-lg1" th:href="@{/student/delete}" role="button">继续删除</a></p>
+    
+    
+  </div>  
+</div>  
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</body>
+</html>
